@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Imóvel - UrbanNest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="detalhes.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-left">
+                <a href="index.html" class="logo-link">
+                    <img src="urban_nest_logo.png" alt="UrbanNest" class="logo">
+                </a>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="imoveis.html">Imóveis</a></li>
+                    <li><a href="cadastro_imovel.html">Anunciar</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="btn-login">Entrar</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="index.html">Início</a>
+                <span>/</span>
+                <a href="imoveis.html">Imóveis</a>
+                <span>/</span>
+                <span id="breadcrumbTitle">Carregando...</span>
+            </nav>
+
+            <!-- Loading State -->
+            <div class="loading-container" id="loadingContainer">
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Carregando detalhes do imóvel...</p>
+                </div>
+            </div>
+
+            <!-- Imovel Details -->
+            <div class="imovel-details-container" id="imovelContainer" style="display: none;">
+                <!-- Image Gallery -->
+                <section class="image-gallery">
+                    <div class="main-image">
+                        <img id="mainImage" src="" alt="Imóvel">
+                        <div class="image-overlay">
+                            <div class="price-tag" id="priceTag">R$ 0,00/mês</div>
+                            <div class="status-tag" id="statusTag">Disponível</div>
+                        </div>
+                    </div>
+                    <div class="thumbnail-gallery" id="thumbnailGallery">
+                        <!-- Thumbnails serão inseridas via JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Content Grid -->
+                <div class="content-grid">
+                    <!-- Left Column -->
+                    <div class="left-column">
+                        <!-- Basic Info -->
+                        <section class="basic-info">
+                            <h1 id="imovelTitulo">Carregando...</h1>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span id="imovelEndereco">Carregando...</span>
+                            </div>
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <i class="fas fa-bed"></i>
+                                    <span id="quartos">0</span> quartos
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-bath"></i>
+                                    <span id="banheiros">0</span> banheiros
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span id="area">0</span>m²
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-home"></i>
+                                    <span id="tipo">Tipo</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Description -->
+                        <section class="description">
+                            <h2>Descrição</h2>
+                            <p id="descricao">Carregando descrição...</p>
+                        </section>
+
+                        <!-- Features -->
+                        <section class="features">
+                            <h2>Características</h2>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Internet</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-car"></i>
+                                    <span>Garagem</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-swimming-pool"></i>
+                                    <span>Piscina</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-dumbbell"></i>
+                                    <span>Academia</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Segurança 24h</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-tree"></i>
+                                    <span>Área Verde</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Map -->
+                        <section class="map-section">
+                            <h2>Localização</h2>
+                            <div class="map-container">
+                                <div id="map" class="map"></div>
+                                <div class="map-placeholder" id="mapPlaceholder">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <p>Mapa será carregado aqui</p>
+                                    <small>Integração com Google Maps API</small>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="right-column">
+                        <!-- Contact Form -->
+                        <section class="contact-form">
+                            <h2>Agendar Visita</h2>
+                            <form id="agendamentoForm">
+                                <div class="form-group">
+                                    <label for="nome">Nome Completo</label>
+                                    <input type="text" id="nome" name="nome" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">E-mail</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="telefone">Telefone</label>
+                                    <input type="tel" id="telefone" name="telefone" required>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="dataVisita">Data da Visita</label>
+                                        <input type="date" id="dataVisita" name="dataVisita" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="horaVisita">Horário</label>
+                                        <select id="horaVisita" name="horaVisita" required>
+                                            <option value="">Selecione</option>
+                                            <option value="09:00">09:00</option>
+                                            <option value="10:00">10:00</option>
+                                            <option value="11:00">11:00</option>
+                                            <option value="14:00">14:00</option>
+                                            <option value="15:00">15:00</option>
+                                            <option value="16:00">16:00</option>
+                                            <option value="17:00">17:00</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="mensagem">Mensagem (opcional)</label>
+                                    <textarea id="mensagem" name="mensagem" rows="3" placeholder="Deixe uma mensagem ou dúvida..."></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn-primary">
+                                    <i class="fas fa-calendar-plus"></i>
+                                    Agendar Visita
+                                </button>
+                            </form>
+                        </section>
+
+                        <!-- Contact Info -->
+                        <section class="contact-info">
+                            <h3>Informações de Contato</h3>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>(11) 9999-9999</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>contato@urbannest.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-whatsapp"></i>
+                                <span>WhatsApp: (11) 9999-9999</span>
+                            </div>
+                        </section>
+
+                        <!-- Share -->
+                        <section class="share-section">
+                            <h3>Compartilhar</h3>
+                            <div class="share-buttons">
+                                <button class="share-btn facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+                                <button class="share-btn twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+                                <button class="share-btn whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
+                                <button class="share-btn copy">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <a href="sobre.html">Sobre</a>
+                    <a href="#">Publicidade</a>
+                    <a href="#">Negócios</a>
+                    <a href="#">Como funciona a Busca</a>
+                </div>
+                <div class="footer-right">
+                    <a href="termos.html">Privacidade</a>
+                    <a href="termos.html">Termos</a>
+                    <a href="#">Configurações</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UrbanNest. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="detalhes.js"></script>
+    <!-- Google Maps API será carregada via JavaScript -->
+</body>
+</html>
+

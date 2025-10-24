@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanNest - Sistema de Gerenciamento de Imóveis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-left">
+                <a href="index.html" class="logo-link">
+                    <img src="urban_nest_logo.png" alt="UrbanNest" class="logo">
+                </a>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="imoveis.html">Imóveis</a></li>
+                    <li><a href="cadastro_imovel.html">Anunciar</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="btn-login">Entrar</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Encontre seu lar ideal com o UrbanNest</h1>
+                <p class="hero-subtitle">O melhor sistema de busca de imóveis para aluguel</p>
+                
+                <!-- Search Form -->
+                <form class="search-form" id="searchForm">
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <i class="fas fa-search search-icon"></i>
+                            <input 
+                                type="text" 
+                                id="searchInput" 
+                                placeholder="Buscar imóveis por localização, tipo ou características..."
+                                class="search-input"
+                            >
+                            <div class="search-actions">
+                                <button type="button" class="search-btn-icon" title="Busca por voz">
+                                    <i class="fas fa-microphone"></i>
+                                </button>
+                                <button type="button" class="search-btn-icon" title="Busca por imagem">
+                                    <i class="fas fa-camera"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="search-buttons">
+                        <button type="submit" class="btn-primary">Buscar Imóveis</button>
+                        <button type="button" class="btn-secondary" id="luckyBtn">Estou com sorte</button>
+                    </div>
+                </form>
+
+                <!-- Quick Filters -->
+                <div class="quick-filters">
+                    <h3>Busca rápida por:</h3>
+                    <div class="filter-buttons">
+                        <button class="filter-btn" data-filter="apartamento">
+                            <i class="fas fa-building"></i>
+                            Apartamentos
+                        </button>
+                        <button class="filter-btn" data-filter="casa">
+                            <i class="fas fa-home"></i>
+                            Casas
+                        </button>
+                        <button class="filter-btn" data-filter="loft">
+                            <i class="fas fa-warehouse"></i>
+                            Lofts
+                        </button>
+                        <button class="filter-btn" data-filter="studio">
+                            <i class="fas fa-bed"></i>
+                            Studios
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2>Por que escolher o UrbanNest?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-search-location feature-icon"></i>
+                        <h3>Busca Inteligente</h3>
+                        <p>Sistema avançado de busca com filtros personalizados e integração com mapas</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <h3>Segurança</h3>
+                        <p>Todos os imóveis são verificados e os proprietários são validados</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-mobile-alt feature-icon"></i>
+                        <h3>Responsivo</h3>
+                        <p>Acesse de qualquer dispositivo - desktop, tablet ou smartphone</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-clock feature-icon"></i>
+                        <h3>Disponível 24/7</h3>
+                        <p>Busque e agende visitas a qualquer hora do dia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Language Options -->
+        <section class="language-section">
+            <p>UrbanNest disponível em: 
+                <a href="#" class="language-link">English</a> • 
+                <a href="#" class="language-link">Español</a> • 
+                <a href="#" class="language-link">Français</a>
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <a href="sobre.html">Sobre</a>
+                    <a href="#">Publicidade</a>
+                    <a href="#">Negócios</a>
+                    <a href="#">Como funciona a Busca</a>
+                </div>
+                <div class="footer-right">
+                    <a href="termos.html">Privacidade</a>
+                    <a href="termos.html">Termos</a>
+                    <a href="#">Configurações</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UrbanNest. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

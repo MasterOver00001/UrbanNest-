@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anunciar Imóvel - UrbanNest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cadastro.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-left">
+                <a href="index.html" class="logo-link">
+                    <img src="urban_nest_logo.png" alt="UrbanNest" class="logo">
+                </a>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="imoveis.html">Imóveis</a></li>
+                    <li><a href="cadastro_imovel.html" class="active">Anunciar</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="btn-login">Entrar</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Header Section -->
+            <section class="page-header">
+                <h1>Anunciar seu Imóvel</h1>
+                <p>Cadastre seu imóvel de forma rápida e fácil. Alcance milhares de interessados!</p>
+            </section>
+
+            <!-- Form Container -->
+            <div class="form-container">
+                <form id="cadastroImovelForm" class="cadastro-form">
+                    <!-- Informações Básicas -->
+                    <section class="form-section">
+                        <h2><i class="fas fa-home"></i> Informações Básicas</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="titulo">Título do Anúncio *</label>
+                                <input type="text" id="titulo" name="titulo" required 
+                                       placeholder="Ex: Apartamento moderno no centro">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tipo">Tipo de Imóvel *</label>
+                                <select id="tipo" name="tipo" required>
+                                    <option value="">Selecione o tipo</option>
+                                    <option value="apartamento">Apartamento</option>
+                                    <option value="casa">Casa</option>
+                                    <option value="loft">Loft</option>
+                                    <option value="studio">Studio</option>
+                                    <option value="cobertura">Cobertura</option>
+                                    <option value="sobrado">Sobrado</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="preco">Preço do Aluguel (R$) *</label>
+                                <input type="number" id="preco" name="preco" required 
+                                       placeholder="2500" min="0" step="0.01">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="quartos">Quartos *</label>
+                                <select id="quartos" name="quartos" required>
+                                    <option value="">Selecione</option>
+                                    <option value="1">1 quarto</option>
+                                    <option value="2">2 quartos</option>
+                                    <option value="3">3 quartos</option>
+                                    <option value="4">4 quartos</option>
+                                    <option value="5">5+ quartos</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="banheiros">Banheiros *</label>
+                                <select id="banheiros" name="banheiros" required>
+                                    <option value="">Selecione</option>
+                                    <option value="1">1 banheiro</option>
+                                    <option value="2">2 banheiros</option>
+                                    <option value="3">3 banheiros</option>
+                                    <option value="4">4+ banheiros</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="area">Área (m²) *</label>
+                                <input type="number" id="area" name="area" required 
+                                       placeholder="80" min="1" step="0.01">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Endereço -->
+                    <section class="form-section">
+                        <h2><i class="fas fa-map-marker-alt"></i> Endereço</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cep">CEP *</label>
+                                <input type="text" id="cep" name="cep" required 
+                                       placeholder="00000-000" maxlength="9">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="rua">Rua/Avenida *</label>
+                                <input type="text" id="rua" name="rua" required 
+                                       placeholder="Rua das Flores">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="numero">Número *</label>
+                                <input type="text" id="numero" name="numero" required 
+                                       placeholder="123">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bairro">Bairro *</label>
+                                <input type="text" id="bairro" name="bairro" required 
+                                       placeholder="Centro">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cidade">Cidade *</label>
+                                <input type="text" id="cidade" name="cidade" required 
+                                       placeholder="São Paulo">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="estado">Estado *</label>
+                                <select id="estado" name="estado" required>
+                                    <option value="">Selecione</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="CE">Ceará</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Descrição -->
+                    <section class="form-section">
+                        <h2><i class="fas fa-edit"></i> Descrição</h2>
+                        
+                        <div class="form-group">
+                            <label for="descricao">Descrição do Imóvel *</label>
+                            <textarea id="descricao" name="descricao" required rows="5" 
+                                      placeholder="Descreva as características, vantagens e diferenciais do seu imóvel..."></textarea>
+                            <small>Mínimo 50 caracteres</small>
+                        </div>
+                    </section>
+
+                    <!-- Características -->
+                    <section class="form-section">
+                        <h2><i class="fas fa-list-check"></i> Características</h2>
+                        
+                        <div class="checkbox-grid">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="caracteristicas" value="mobiliado">
+                                <span class="checkmark"></span>
+                                <i class="fas fa-couch"></i>
+                                Mobiliado
+                            </label>
+                            
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="caracteristicas" value="garagem">
+                                <span class="checkmark"></span>
+                                <i class="fas fa-car"></i>
+                                Garagem
+                            </label>
+                            
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="caracteristicas" value="piscina">
+                                <span class="checkmark"></span>
+                                <i class="fas fa-swimming-pool"></i>
+                                Piscina
+                            </label>
+                            
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="caracteristicas" value="academia">
+                                <span class="checkmark"></span>
+                                <i class="fas fa-dumbbell"></i>
+                                Academia
+                            </label>
+                            
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="caracteristicas" value="seguranca">
+                                <span class="checkmark"></span>
+                                <i class="fas fa-shield-alt"></i>
+                                Segurança 24h
+                            </label>
+                            
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="caracteristicas" value="elevador">
+                                <span class="checkmark"></span>
+                                <i class="fas fa-elevator"></i>
+                                Elevador
+                            </label>
+                            
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="caracteristicas" value="varanda">
+                                <span class="checkmark"></span>
+                                <i class="fas fa-tree"></i>
+                                Varanda/Terraço
+                            </label>
+                            
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="caracteristicas" value="pets">
+                                <span class="checkmark"></span>
+                                <i class="fas fa-paw"></i>
+                                Aceita Pets
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- Imagens -->
+                    <section class="form-section">
+                        <h2><i class="fas fa-camera"></i> Fotos do Imóvel</h2>
+                        
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <h3>Adicione fotos do seu imóvel</h3>
+                                <p>Arraste e solte as imagens aqui ou clique para selecionar</p>
+                                <input type="file" id="imagens" name="imagens" multiple accept="image/*" hidden>
+                                <button type="button" class="btn-upload" onclick="document.getElementById('imagens').click()">
+                                    Selecionar Fotos
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="image-preview" id="imagePreview"></div>
+                    </section>
+
+                    <!-- Contato -->
+                    <section class="form-section">
+                        <h2><i class="fas fa-user"></i> Informações de Contato</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nomeProprietario">Nome Completo *</label>
+                                <input type="text" id="nomeProprietario" name="nomeProprietario" required 
+                                       placeholder="Seu nome completo">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="emailProprietario">E-mail *</label>
+                                <input type="email" id="emailProprietario" name="emailProprietario" required 
+                                       placeholder="seu@email.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefoneProprietario">Telefone *</label>
+                                <input type="tel" id="telefoneProprietario" name="telefoneProprietario" required 
+                                       placeholder="(11) 99999-9999">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="whatsapp">WhatsApp</label>
+                                <input type="tel" id="whatsapp" name="whatsapp" 
+                                       placeholder="(11) 99999-9999">
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Termos -->
+                    <section class="form-section">
+                        <div class="terms-section">
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="aceitoTermos" name="aceitoTermos" required>
+                                <span class="checkmark"></span>
+                                Eu aceito os <a href="termos.html" target="_blank">Termos de Uso</a> e 
+                                <a href="termos.html" target="_blank">Política de Privacidade</a>
+                            </label>
+                            
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="aceitoContato" name="aceitoContato">
+                                <span class="checkmark"></span>
+                                Aceito receber contatos de interessados no meu imóvel
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- Submit -->
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="limparFormulario()">
+                            <i class="fas fa-eraser"></i>
+                            Limpar Formulário
+                        </button>
+                        
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Publicar Anúncio
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <a href="sobre.html">Sobre</a>
+                    <a href="#">Publicidade</a>
+                    <a href="#">Negócios</a>
+                    <a href="#">Como funciona a Busca</a>
+                </div>
+                <div class="footer-right">
+                    <a href="termos.html">Privacidade</a>
+                    <a href="termos.html">Termos</a>
+                    <a href="#">Configurações</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UrbanNest. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="cadastro.js"></script>
+</body>
+</html>
+
